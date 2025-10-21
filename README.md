@@ -1,73 +1,53 @@
-# Welcome to your Lovable project
+# Onebox – Real-Time AI Email Aggregator
 
-## Project info
+## Project Info
 
-**URL**: https://lovable.dev/projects/7ce9cd65-e706-4e24-a11d-c5b37e33e624
+**Live URL**: https://onebox-ai.netlify.app/  
+**Assignment**: ReachInbox Backend Engineering – Feature-Rich Onebox for Emails
 
-## How can I edit this code?
+Onebox is an AI-powered email management platform that allows users to connect multiple IMAP email accounts, view emails in real-time, search efficiently, categorize using AI, and get suggested replies for outreach. It also supports Slack and webhook integrations for automation.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## How to Run the Project Locally
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7ce9cd65-e706-4e24-a11d-c5b37e33e624) and start prompting.
+**Requirements:** Node.js (v18+) and npm, Docker & Docker Compose  
 
-Changes made via Lovable will be committed automatically to this repo.
+Steps to run locally using VS Code or any IDE:
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to project directory
+cd reachinbox-onebox
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Create a .env file in the project root with the following variables
+# (Replace with your actual credentials and keys)
+PORT=4000
+IMAP1_USER=your_email1@example.com
+IMAP1_PASS=app_password1
+IMAP2_USER=your_email2@example.com
+IMAP2_PASS=app_password2
+IMAP_HOST=imap.example.com
+IMAP_PORT=993
+IMAP_SECURE=true
+ELASTIC_URL=http://localhost:9200
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/your/webhook
+WEBHOOK_SITE_URL=https://webhook.site/your_url
+OPENAI_KEY=sk-xxxx           # optional for AI features
+GEMINI_API_KEY=xxxx           # optional for AI features
+
+
+
+# Step 5: Start Docker services for Elasticsearch & Qdrant
+docker-compose up -d
+
+# Step 6: Start backend server
+npx ts-node src/server.ts
+
+# Step 7: (Optional) Start frontend development server if included
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7ce9cd65-e706-4e24-a11d-c5b37e33e624) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
