@@ -2,7 +2,7 @@
 
 ## Project Info
 
-**Live URL**: https://onebox-ai.netlify.app/  
+**Live URL**: https://oneboxai.netlify.app/
 **Assignment**: ReachInbox Backend Engineering – Feature-Rich Onebox for Emails
 
 Onebox is an AI-powered email management platform that allows users to connect multiple IMAP email accounts, view emails in real-time, search efficiently, categorize using AI, and get suggested replies for outreach. It also supports Slack and webhook integrations for automation.
