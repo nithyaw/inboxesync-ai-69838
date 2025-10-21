@@ -14,191 +14,16 @@ export type Database = {
   }
   public: {
     Tables: {
-      email_accounts: {
-        Row: {
-          created_at: string
-          email: string
-          id: string
-          imap_host: string
-          imap_password: string
-          imap_port: number
-          imap_username: string
-          is_active: boolean
-          last_sync_at: string | null
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          email: string
-          id?: string
-          imap_host: string
-          imap_password: string
-          imap_port?: number
-          imap_username: string
-          is_active?: boolean
-          last_sync_at?: string | null
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          email?: string
-          id?: string
-          imap_host?: string
-          imap_password?: string
-          imap_port?: number
-          imap_username?: string
-          is_active?: boolean
-          last_sync_at?: string | null
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      emails: {
-        Row: {
-          account_id: string
-          body: string | null
-          category: Database["public"]["Enums"]["email_category"]
-          created_at: string
-          folder: string
-          from_address: string
-          id: string
-          is_read: boolean
-          message_id: string
-          received_at: string
-          search_vector: unknown | null
-          subject: string | null
-          to_address: string | null
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          account_id: string
-          body?: string | null
-          category?: Database["public"]["Enums"]["email_category"]
-          created_at?: string
-          folder?: string
-          from_address: string
-          id?: string
-          is_read?: boolean
-          message_id: string
-          received_at: string
-          search_vector?: unknown | null
-          subject?: string | null
-          to_address?: string | null
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          account_id?: string
-          body?: string | null
-          category?: Database["public"]["Enums"]["email_category"]
-          created_at?: string
-          folder?: string
-          from_address?: string
-          id?: string
-          is_read?: boolean
-          message_id?: string
-          received_at?: string
-          search_vector?: unknown | null
-          subject?: string | null
-          to_address?: string | null
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "emails_account_id_fkey"
-            columns: ["account_id"]
-            isOneToOne: false
-            referencedRelation: "email_accounts"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      webhook_notifications: {
-        Row: {
-          created_at: string
-          email_id: string
-          id: string
-          response: string | null
-          status: string
-          webhook_url: string
-        }
-        Insert: {
-          created_at?: string
-          email_id: string
-          id?: string
-          response?: string | null
-          status?: string
-          webhook_url: string
-        }
-        Update: {
-          created_at?: string
-          email_id?: string
-          id?: string
-          response?: string | null
-          status?: string
-          webhook_url?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "webhook_notifications_email_id_fkey"
-            columns: ["email_id"]
-            isOneToOne: false
-            referencedRelation: "emails"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      gtrgm_compress: {
-        Args: { "": unknown }
-        Returns: unknown
-      }
-      gtrgm_decompress: {
-        Args: { "": unknown }
-        Returns: unknown
-      }
-      gtrgm_in: {
-        Args: { "": unknown }
-        Returns: unknown
-      }
-      gtrgm_options: {
-        Args: { "": unknown }
-        Returns: undefined
-      }
-      gtrgm_out: {
-        Args: { "": unknown }
-        Returns: unknown
-      }
-      set_limit: {
-        Args: { "": number }
-        Returns: number
-      }
-      show_limit: {
-        Args: Record<PropertyKey, never>
-        Returns: number
-      }
-      show_trgm: {
-        Args: { "": string }
-        Returns: string[]
-      }
+      [_ in never]: never
     }
     Enums: {
-      email_category:
-        | "interested"
-        | "meeting_booked"
-        | "not_interested"
-        | "spam"
-        | "out_of_office"
-        | "uncategorized"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -325,15 +150,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      email_category: [
-        "interested",
-        "meeting_booked",
-        "not_interested",
-        "spam",
-        "out_of_office",
-        "uncategorized",
-      ],
-    },
+    Enums: {},
   },
 } as const
